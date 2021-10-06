@@ -1,4 +1,1 @@
-struct stack
-{
-    /* data */
-}; stack;
+// Include stack.c here somehow

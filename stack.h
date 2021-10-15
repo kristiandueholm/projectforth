@@ -19,5 +19,6 @@ typedef struct stack
 
 stack* initialize_stack();
 void push(stack *s, int x);
+int pop(stack *s);
 
 #endif // __STACK_H_

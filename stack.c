@@ -1,6 +1,7 @@
 #include "stack.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 /* Function returning a stack pointer */
 stack* initialize_stack()
@@ -17,7 +18,7 @@ stack* initialize_stack()
 /* Pushes integer onto stack */
 void push(stack *s, int x)
 {
-    printf("Push function called\n");
+    printf("Push function called.\n");
 
     node* p = malloc(sizeof(node));
     p->value = x;
@@ -36,4 +37,19 @@ void push(stack *s, int x)
     s->size++;
 
     return;
+}
+
+int pop(stack *s)
+{
+    assert(s->size > 0);
+    printf("Pop function called.\n");
+
+    node *p = s->head;
+    int x = p->value;
+
+    s->head = p->next;
+    s->size--;
+
+    free(p);
+    return(x);
 }

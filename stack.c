@@ -1,11 +1,11 @@
 #include "stack.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 
 stack* initialize_stack() {
     stack* s = malloc(sizeof(stack));
     s->head = NULL;
+    s->size = 0;
     
     printf("Stack initialized\n");
 
@@ -35,6 +35,7 @@ void push(stack *s, int x) {
     }
 
     s->head = p;
+    s->size++;
 
     return;
 }

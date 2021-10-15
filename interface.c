@@ -2,12 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void print_stack(stack *s) {
-    if (empty_stack(s)) {
+void print_stack(stack *s)
+{
+    if (s->head == NULL)
+    {
         printf("Stack is empty\n");
     }
 
-    else {
+    else
+    {
         int *stack_array = (int *)malloc(sizeof(int) * s->size);
         node *p = s->head;
 

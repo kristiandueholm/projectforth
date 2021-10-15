@@ -3,7 +3,8 @@
 
 #include <stdbool.h>
 
-typedef struct node {
+typedef struct node
+{
    int value;
    struct node* next;
 } node;
@@ -15,7 +16,6 @@ typedef struct stack
 } stack;
 
 stack* initialize_stack();
-bool empty_stack(stack* s);
 void push(stack *s, int x);
 
 #endif // __STACK_H_

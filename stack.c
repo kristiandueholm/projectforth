@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-stack* initialize_stack() {
+stack* initialize_stack()
+{
     stack* s = malloc(sizeof(stack));
     s->head = NULL;
     s->size = 0;
@@ -12,25 +13,20 @@ stack* initialize_stack() {
     return(s);
 }
 
-bool empty_stack(stack* s) {
-    if (s->head == NULL)
-    {
-        return(true);
-    }
-    return(false);
-}
-
-void push(stack *s, int x) {
+void push(stack *s, int x)
+{
     printf("Push function called\n");
 
     node* p = malloc(sizeof(node));
     p->value = x;
 
-    if (empty_stack(s)) {
+    if (s->head == NULL)
+    {
         p->next = NULL;
     }
 
-    else {
+    else
+    {
         p->next = s->head;
     }
 

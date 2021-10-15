@@ -1,15 +1,34 @@
 #include "stack.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-int findIndex(int* a[]) {
-    // Find biggest index, non-zero in array
+stack* initialize_stack() {
+    stack* s = malloc(sizeof(stack));
+    s->head = NULL;
+    
+    printf("Stack initialized\n");
+
+    return(s);
 }
 
-int stackPop(int* a[]) {
-    // Pops last item in stack, returns value of popped int
-}
+void push(stack *s, int x) {
+    printf("Push function called");
 
-void stackPush(int x, int *a[]) {
-    int index = findIndex(&a);
-    *a[index+1] = x;
+    node* p = s->head;
+    
+    while (p->next != NULL)
+    {
+        printf("Next != NULL\n");
+        p = p->next;
+    }
+    printf("Found last note\n");
+    node* q = malloc(sizeof(node));
+
+    q->value    = x;
+    q->next     = NULL;
+    p->next     = q;
+
+    printf("Pushed %d onto stack\n", x);
+
     return;
 }

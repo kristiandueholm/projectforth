@@ -1,29 +1,10 @@
-#include <stdio.h>
+#include "stack.h"
+#include "interface.h"
 
 void main() {
-    int stack[100] = {0};
-
-    while (1)
-    {
-        int command;
-        printf("0: Exit\n1: Push to stack\n");
-        printf("Choose command\n");
-        scanf_s("%d", &command);
-
-        switch (command)
-        {
-        case 0:
-            abort();
-        
-        case 1:
-            int x;
-            printf("Insert number");
-            scanf_s("%d", &x);
-
-        
-        default:
-            break;
-        }
-    }
-    
+    stack* s = initialize_stack();
+    push(s, 1);
+    push(s, 2);
+    push(s, 3);
+    print_stack(s);
 }

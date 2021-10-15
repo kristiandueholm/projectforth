@@ -1,6 +1,7 @@
 #include "stack.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 stack* initialize_stack() {
     stack* s = malloc(sizeof(stack));
@@ -11,24 +12,29 @@ stack* initialize_stack() {
     return(s);
 }
 
-void push(stack *s, int x) {
-    printf("Push function called");
-
-    node* p = s->head;
-    
-    while (p->next != NULL)
+bool empty_stack(stack* s) {
+    if (s->head == NULL)
     {
-        printf("Next != NULL\n");
-        p = p->next;
+        return(true);
     }
-    printf("Found last note\n");
-    node* q = malloc(sizeof(node));
+    return(false);
+}
 
-    q->value    = x;
-    q->next     = NULL;
-    p->next     = q;
+void push(stack *s, int x) {
+    printf("Push function called\n");
 
-    printf("Pushed %d onto stack\n", x);
+    node* p = malloc(sizeof(node));
+    p->value = x;
+
+    if (empty_stack(s)) {
+        p->next = NULL;
+    }
+
+    else {
+        p->next = s->head;
+    }
+
+    s->head = p;
 
     return;
 }

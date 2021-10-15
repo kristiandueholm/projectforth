@@ -2,24 +2,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*  
+    Prints the stack
+    Appends whole stack to array, then prints in reverse order
+*/
 void print_stack(stack *s)
 {
-    if (s->head == NULL)
+    if (s->size == 0) // Stack empty
     {
         printf("Stack is empty\n");
     }
 
     else
     {
+        /* Allocates array for linked list values */
         int *stack_array = (int *)malloc(sizeof(int) * s->size);
         node *p = s->head;
 
+        /* Iterates through each node saving in array */
         for (int i = 0; i < s->size; i++)
         {
             stack_array[i] = p->value;
             p = p->next;
         }
 
+        /* Prints array in reverse order */
         for (int i = s->size - 1; i >= 0; i--)
         {
             printf("%d ", stack_array[i]);

@@ -1,6 +1,7 @@
 #include "stack.h"
 #include "interface.h"
 
+/* Sandboxing function */
 void main()
 {
     stack* s = initialize_stack();

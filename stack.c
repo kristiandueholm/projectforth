@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* Function returning a stack pointer */
 stack* initialize_stack()
 {
     stack* s = malloc(sizeof(stack));
@@ -13,6 +14,7 @@ stack* initialize_stack()
     return(s);
 }
 
+/* Pushes integer onto stack */
 void push(stack *s, int x)
 {
     printf("Push function called\n");
@@ -20,7 +22,7 @@ void push(stack *s, int x)
     node* p = malloc(sizeof(node));
     p->value = x;
 
-    if (s->head == NULL)
+    if (s->size == 0) // Stack empty
     {
         p->next = NULL;
     }

@@ -3,12 +3,14 @@
 
 #include <stdbool.h>
 
+/* Node struct singly linked list */
 typedef struct node
 {
    int value;
    struct node* next;
 } node;
 
+/* Stack head struct */
 typedef struct stack
 {
     int size;

@@ -37,3 +37,14 @@ void print_stack(stack *s)
 
     return;
 }
+
+/* Function for decoding user input */
+
+// Make this function take string input
+void user_input()
+{
+    char input;
+    printf("Please insert command:\n");
+    scanf(" %c", &input);
+    printf("%d", input);
+}

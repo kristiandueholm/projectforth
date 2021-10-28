@@ -1,7 +1,4 @@
 #include "stack.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <assert.h>
 
 /* Function returning a stack pointer */
 stack* initialize_stack()

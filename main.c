@@ -5,5 +5,5 @@
 /* Sandboxing function */
 void main()
 {
-    user_input();
+    printf("Hello World!");
 }

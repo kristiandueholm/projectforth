@@ -20,3 +20,21 @@ void minus(stack *s)
     push(s, a - b);
     return;
 }
+
+void multiply(stack *s)
+{
+    assert(s->size > 1);
+    int a = pop(s);
+    int b = pop(s);
+    push(s, a - b);
+    return;
+}
+
+void divide(stack *s)
+{
+    assert(s->size > 1);
+    int a = pop(s);
+    int b = pop(s);
+    push(s, a - b);
+    return;
+}

@@ -13,21 +13,12 @@ stack* initialize_stack()
 }
 
 /* Pushes integer onto stack */
-void push(stack *s, char x[])
+void push(stack *s, int x)
 {
     printf("Push function called.\n");
 
     node* p = malloc(sizeof(node));
-
-    for (int i = 0; i < 50; i++)
-    {
-        if (x[i] != '\0')
-        {
-            p->value[i] = x[i];
-        }
-        else break;
-        
-    }
+    p->value = x;
 
     if (s->size == 0) // Stack empty
     {
@@ -45,21 +36,17 @@ void push(stack *s, char x[])
     return;
 }
 
-char* pop(stack *s)
+int pop(stack *s)
 {
     assert(s->size > 0);
     printf("Pop function called.\n");
 
-    char *x = malloc(sizeof(char) * (50 + 1));
-    for (int i = 0; i < 50; i++)
-    {
-        x[i] = s->head->value[i];
-    }
-    
+    node *p = s->head;
+    int x = p->value;
 
-    s->head = s->head->next;
+    s->head = p->next;
     s->size--;
 
-    free(s->head);
+    free(p);
     return(x);
 }

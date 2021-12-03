@@ -6,7 +6,7 @@
 /* Node struct singly linked list */
 typedef struct node
 {
-   int value;
+   char value[50];
    struct node* next;
 } node;
 
@@ -18,7 +18,7 @@ typedef struct stack
 } stack;
 
 stack* initialize_stack();
-void push(stack *s, int x);
-int pop(stack *s);
+void push(stack *s, char x[], int arraySize);
+char* pop(stack *s);
 
 #endif // __STACK_H_

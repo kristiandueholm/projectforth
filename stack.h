@@ -2,6 +2,9 @@
 #define __STACK_H_
 
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <assert.h>
 
 /* Node struct singly linked list */
 typedef struct node

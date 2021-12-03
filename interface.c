@@ -52,3 +52,35 @@ void parse_input(stack* s, char input[])
 {
 
 }
+
+char** explode(char input[])
+{
+    char output[50][50];
+    int m = 0;
+    int n = 0;
+
+    for (int i = 0; i < 50; i++)
+    {
+        switch (input[i])
+        {
+        case ' ':
+            output[m][n] = '\0';
+            n++;
+            m = 0;
+            break;
+        
+        default:
+            output[m][n] = input[i];
+            m++;
+            break;
+        }
+        
+        if (input[i] == '\0')
+        {
+            output[m][n] = '\0';
+            break;
+        }
+    }
+
+    return output;
+}

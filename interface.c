@@ -35,6 +35,7 @@
 //         printf("\n");
 //     }
 
+<<<<<<< HEAD
 //     return;
 // }
 
@@ -52,3 +53,9 @@ void parse_input(stack* s, char input[])
 {
 
 }
+=======
+    return;
+}
+/* Function for decoding user input */
+
+>>>>>>> 79905e4067febd7991f5b88cc3e7649d48c4e544

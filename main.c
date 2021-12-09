@@ -8,7 +8,4 @@ void main()
 {
     stack *s = initialize_stack();
     user_input(s);
-    print_stack(s);
-    user_input(s);
-    print_stack(s);
 }
